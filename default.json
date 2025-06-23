@@ -7,6 +7,8 @@
     ":disableRateLimiting",
     ":enablePreCommit",
     ":semanticCommits",
+    "github>frantathefranta/renovate-config:custom-managers.json5",
+    "github>frantathefranta/renovate-config:automerge-docker-digests.json5",
     "github>frantathefranta/renovate-config:automerge-github-actions.json5",
     "github>frantathefranta/renovate-config:labels.json5",
     "github>frantathefranta/renovate-config:semantic-commits.json5",
@@ -16,7 +18,6 @@
   "dependencyDashboardTitle": "Renovate Dashboard",
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "commitBodyTable": true,
-  "rebaseWhen": "conflicted",
-  "platformCommit": true,
-  "prBodyTemplate": "{{{header}}}{{{table}}}{{{warnings}}}{{{notes}}}{{{changelogs}}}"
+  "rebaseWhen": "auto",
+  "platformCommit": "enabled"
 }

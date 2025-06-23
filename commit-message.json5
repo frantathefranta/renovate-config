@@ -1,16 +1,61 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "commitMessageTopic": "{{depName}}",
-  "commitMessageExtra": "to {{newVersion}}",
-  "commitMessageSuffix": "",
   "packageRules": [
     {
-      "matchDatasources": ["helm"],
-      "commitMessageTopic": "Chart {{depName}}"
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "semanticCommitType": "feat",
+      "commitMessageTopic": "{{depName}}",
+      "commitMessagePrefix": "{{semanticCommitType}}({{semanticCommitScope}})!:",
+      "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )",
+      "commitMessageSuffix": ""
     },
     {
-      "matchDatasources": ["docker"],
-      "commitMessageTopic": "Image {{depName}}"
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "semanticCommitType": "feat",
+      "commitMessageTopic": "{{depName}}",
+      "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )",
+      "commitMessageSuffix": ""
+    },
+    {
+      "matchUpdateTypes": [
+        "patch"
+      ],
+      "semanticCommitType": "fix",
+      "commitMessageTopic": "{{depName}}",
+      "commitMessageExtra": "( {{currentVersion}} → {{newVersion}} )",
+      "commitMessageSuffix": ""
+    },
+    {
+      "matchUpdateTypes": [
+        "digest"
+      ],
+      "semanticCommitType": "chore",
+      "commitMessageTopic": "{{depName}}",
+      "commitMessageExtra": "( {{currentDigestShort}} → {{newDigestShort}} )",
+      "commitMessageSuffix": ""
+    },
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "semanticCommitScope": "container"
+    },
+    {
+      "matchDatasources": [
+        "helm"
+      ],
+      "semanticCommitScope": "helm"
+    },
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "semanticCommitType": "ci",
+      "semanticCommitScope": "github-action"
     }
   ]
 }
