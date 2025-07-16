@@ -20,5 +20,7 @@
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "commitBodyTable": true,
   "rebaseWhen": "auto",
-  "platformCommit": "enabled"
+  "platformCommit": "enabled",
+  "username": "lord-of-lightning-bot[bot]",
+  "gitAuthor": "lord-of-lightning-bot <lord-of-lighting-bot[bot]@users.noreply.github.com>"
 }
