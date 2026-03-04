@@ -8,6 +8,7 @@
     ":enablePreCommit",
     ":semanticCommits",
     ":dependencyDashboard",
+    ":automergeBranch",
     "github>frantathefranta/renovate-config:custom-managers.json5",
     "github>frantathefranta/renovate-config:automerge-docker-digests.json5",
     "github>frantathefranta/renovate-config:automerge-github-actions.json5",
